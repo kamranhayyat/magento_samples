@@ -1,0 +1,12 @@
+<?php
+    $helper = $this->helper('Kamran\CustomExt\Helper\Data');
+    $product = $helper->getCurrentProduct();
+?>
+
+<?php if($helper->getProductLabelSettings()) : ?>
+    <div class="product-label" style="background-color: #<?= $helper->getProductLabelBGColor() ?>">
+        <span>
+            <?= $product->getProductLabelAttribute() ? $product->getProductLabelAttribute() : null ?>
+        </span>
+    </div>
+<?php endif; ?>
